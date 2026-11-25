@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Acesse sua conta Comparatrip." name="description" />
+    <title>Entrar | Comparatrip</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="extra.css" rel="stylesheet" />
+</head>
+
+<body data-page="login">
+    <header class="navbar"><a class="logo" href="index.html"><i
+                class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a class="" href="index.html">Home</a></li>
+            <li><a class="" href="pacotes.html">Pacotes</a></li>
+            <li><a class="" href="destinos.html">Destinos</a></li>
+            <li><a class="" href="promocoes.html">Promoções</a></li>
+            <li><a class="" href="blog.html">Blog</a></li>
+            <li><a class="" href="sobre.html">Sobre</a></li>
+            <li><a class="" href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions"><a aria-label="Favoritos" class="icon-link" href="favoritos.html"><i
+                    class="fa-regular fa-heart"></i></a><a aria-label="Carrinho" class="icon-link"
+                href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a><a class="btn-conta"
+                href="login.html"><i class="fa-regular fa-user"></i> Entrar</a><button aria-expanded="false"
+                aria-label="Abrir menu" class="menu-btn" id="menuBtn" type="button"><i
+                    class="fa-solid fa-bars"></i></button></div>
+    </header>
+    <main id="app">
+        <section class="page-header">
+            <h1>Entrar</h1>
+            <p>Acesse sua conta para ver suas viagens e favoritos.</p>
+        </section>
+        <section class="section section-alt">
+            <div class="container" style="max-width:460px">
+                <form class="form-box" id="lf" method="post">
+                    <div class="field"><label>E-mail</label><input id="le" name="email" required="" type="email" />
+                    </div>
+                    <div class="field"><label>Senha</label><input id="lp" name="senha" required="" type="password" />
+                    </div><button class="btn-primario" style="width:100%">Entrar</button>
+                    <p class="form-message" id="lm"></p>
+                    <p class="form-note" style="text-align:center">Não tem conta? <a href="cadastro.html"
+                            style="color:var(--od);font-weight:700">Cadastre-se</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div><a class="logo" href="index.html" style="color:white"><i
+                        class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+                <p style="margin-top:12px">Compare viagens, descubra destinos e planeje sua próxima aventura.</p>
+            </div>
+            <div>
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Sua conta</h3>
+                <ul>
+                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="cadastro.html">Criar conta</a></li>
+                    <li><a href="minhas-viagens.html">Minhas viagens</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="termos.html">Termos de uso</a></li>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Receba novidades</h3>
+                <form action="" class="newsletter-form" id="newsletterForm" method="post"><input name="email"
+                        placeholder="Seu melhor e-mail" required="" type="email" /><button
+                        type="submit">Assinar</button></form>
+                <p aria-live="polite" id="msgNewsletter" style="margin-top:8px"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Comparatrip. Projeto demonstrativo desenvolvido por Kaic.</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="extra.js"></script>
+</body>
+
+</html>

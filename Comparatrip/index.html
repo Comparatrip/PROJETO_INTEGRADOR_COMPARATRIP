@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Comparatrip: compare viagens e descubra destinos." name="description" />
+    <title>Sua próxima aventura | Comparatrip</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="extra.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="navbar"><a class="logo" href="index.html"><i
+                class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a class="" href="pacotes.html">Pacotes</a></li>
+            <li><a class="" href="destinos.html">Destinos</a></li>
+            <li><a class="" href="promocoes.html">Promoções</a></li>
+            <li><a class="" href="blog.html">Blog</a></li>
+            <li><a class="" href="sobre.html">Sobre</a></li>
+            <li><a class="" href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions"><a aria-label="Favoritos" class="icon-link" href="favoritos.html"><i
+                    class="fa-regular fa-heart"></i></a><a aria-label="Carrinho" class="icon-link"
+                href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a><a class="btn-conta"
+                href="login.html"><i class="fa-regular fa-user"></i> Entrar</a><button aria-expanded="false"
+                aria-label="Abrir menu" class="menu-btn" id="menuBtn" type="button"><i
+                    class="fa-solid fa-bars"></i></button></div>
+    </header>
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Sua próxima <span>aventura</span><br />começa aqui!</h1>
+            <p>Compare destinos, encontre boas oportunidades e escolha como quer viajar.</p>
+        </div>
+    </section>
+    <div class="search-wrap">
+        <div class="search-tabs"><button class="tab-btn active" data-tipo="ida_e_volta" type="button">Ida e
+                volta</button><button class="tab-btn" data-tipo="so_ida" type="button">Só ida</button><button
+                class="tab-btn" data-tipo="multidestinos" type="button">Multidestinos</button></div>
+        <form action="pacotes.html" class="search-form" id="searchForm" method="get"><input id="tipoViagem" name="tipo"
+                type="hidden" value="ida_e_volta" />
+            <div class="field"><label for="origem">Origem</label><input id="origem" name="origem"
+                    placeholder="De onde você sai?" required="" /></div>
+            <div class="field"><label for="destino">Destino</label><input id="destino" name="destino"
+                    placeholder="Para onde quer ir?" required="" /></div>
+            <div class="field"><label for="data">Data da viagem</label><input id="data" name="data" type="date" /></div>
+            <div class="field"><label for="pessoas">Pessoas</label><select id="pessoas" name="pessoas">
+                    <option>1 pessoa</option>
+                    <option>2 pessoas</option>
+                    <option>3 pessoas</option>
+                    <option>4 pessoas</option>
+                </select></div><button class="btn-primario" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
+                Buscar</button>
+        </form>
+        <div aria-live="polite" class="feedback-box" id="feedbackBusca"></div>
+    </div>
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Destinos que inspiram</h2>
+                <p class="section-subtitle reveal">Alguns lugares para começar a planejar sua próxima viagem.</p>
+                <div class="grid-3">
+                    <article class="card-destino reveal"><img alt="Paris"
+                            src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+                        <div class="card-overlay">
+                            <h3>Paris, França</h3>
+                            <p>Uma viagem cheia de história e charme.</p><span class="preco-pill">A partir de R$
+                                3.490</span><a class="card-link-acao" href="destino.html">Explorar →</a>
+                        </div>
+                    </article>
+                    <article class="card-destino reveal"><img alt="Rio de Janeiro"
+                            src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+                        <div class="card-overlay">
+                            <h3>Rio de Janeiro</h3>
+                            <p>Praias, paisagens e muita energia.</p><span class="preco-pill">A partir de R$
+                                489</span><a class="card-link-acao" href="destino.html">Explorar →</a>
+                        </div>
+                    </article>
+                    <article class="card-destino reveal"><img alt="Praia tropical"
+                            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=900&amp;q=80" />
+                        <div class="card-overlay">
+                            <h3>Ilhas tropicais</h3>
+                            <p>Descanso e paisagens inesquecíveis.</p><span class="preco-pill">A partir de R$
+                                5.820</span><a class="card-link-acao" href="destino.html">Explorar →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title reveal">Por que escolher a Comparatrip?</h2>
+                <p class="section-subtitle">Tudo organizado para sua busca ficar mais fácil.</p>
+                <div class="grid-3">
+                    <div class="info-card reveal"><i class="fa-solid fa-bolt"></i>
+                        <h3>Busca simples</h3>
+                        <p>Encontre opções de viagem sem complicação.</p>
+                    </div>
+                    <div class="info-card reveal"><i class="fa-solid fa-tags"></i>
+                        <h3>Ofertas em destaque</h3>
+                        <p>Compare possibilidades em um só lugar.</p>
+                    </div>
+                    <div class="info-card reveal"><i class="fa-solid fa-earth-americas"></i>
+                        <h3>Vários destinos</h3>
+                        <p>Inspire-se com lugares no Brasil e no mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-warm">
+            <div class="container">
+                <h2 class="section-title reveal">Como funciona?</h2>
+                <p class="section-subtitle">É só seguir três passos para começar a planejar.</p>
+                <div class="grid-3">
+                    <div class="info-card reveal"><i class="fa-solid fa-magnifying-glass"></i>
+                        <h3>01. Pesquise</h3>
+                        <p>Informe de onde você sai e para onde quer ir.</p>
+                    </div>
+                    <div class="info-card reveal"><i class="fa-solid fa-scale-balanced"></i>
+                        <h3>02. Compare</h3>
+                        <p>Confira as opções e escolha a que combina com você.</p>
+                    </div>
+                    <div class="info-card reveal"><i class="fa-solid fa-suitcase-rolling"></i>
+                        <h3>03. Prepare a viagem</h3>
+                        <p>Organize os detalhes e boa viagem!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div><a class="logo" href="index.html" style="color:white"><i
+                        class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+                <p style="margin-top:12px">Compare viagens, descubra destinos e planeje sua próxima aventura.</p>
+            </div>
+            <div>
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Sua conta</h3>
+                <ul>
+                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="cadastro.html">Criar conta</a></li>
+                    <li><a href="minhas-viagens.html">Minhas viagens</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="termos.html">Termos de uso</a></li>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Receba novidades</h3>
+                <form action="" class="newsletter-form" id="newsletterForm" method="post"><input name="email"
+                        placeholder="Seu melhor e-mail" required="" type="email" /><button
+                        type="submit">Assinar</button></form>
+                <p id="msgNewsletter" style="margin-top:8px"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Comparatrip. Projeto demonstrativo desenvolvido por Kaic.</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="extra.js"></script>
+</body>
+
+</html>

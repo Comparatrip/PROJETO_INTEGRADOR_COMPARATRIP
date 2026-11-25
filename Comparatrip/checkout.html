@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Dados dos viajantes e forma de pagamento." name="description" />
+    <title>Pagamento | Comparatrip</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="extra.css" rel="stylesheet" />
+</head>
+
+<body data-page="checkout">
+    <header class="navbar"><a class="logo" href="index.html"><i
+                class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a class="" href="index.html">Home</a></li>
+            <li><a class="" href="pacotes.html">Pacotes</a></li>
+            <li><a class="" href="destinos.html">Destinos</a></li>
+            <li><a class="" href="promocoes.html">Promoções</a></li>
+            <li><a class="" href="blog.html">Blog</a></li>
+            <li><a class="" href="sobre.html">Sobre</a></li>
+            <li><a class="" href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions"><a aria-label="Favoritos" class="icon-link" href="favoritos.html"><i
+                    class="fa-regular fa-heart"></i></a><a aria-label="Carrinho" class="icon-link"
+                href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a><a class="btn-conta"
+                href="login.html"><i class="fa-regular fa-user"></i> Entrar</a><button aria-expanded="false"
+                aria-label="Abrir menu" class="menu-btn" id="menuBtn" type="button"><i
+                    class="fa-solid fa-bars"></i></button></div>
+    </header>
+    <main id="app">
+        <section class="page-header">
+            <h1>Pagamento</h1>
+            <p>Preencha os dados dos viajantes e escolha como pagar.</p>
+        </section>
+        <section class="section section-alt">
+            <div class="container checkout-layout">
+                <form class="form-box" data-total="4492.8" id="pay" method="post"><input id="formaPagamento"
+                        name="forma_pagamento" type="hidden" value="Cartão de crédito" />
+                    <h3 style="margin-top:0px">Viajante 1 (adulto)</h3>
+                    <div class="form-grid">
+                        <div class="field"><label>Nome completo</label><input name="nome0" required=""
+                                value="Administrador" /></div>
+                        <div class="field"><label>CPF ou passaporte</label><input name="doc0"
+                                placeholder="000.000.000-00" required="" /></div>
+                        <div class="field"><label>Data de nascimento</label><input name="nasc0" required=""
+                                type="date" /></div>
+                        <div class="field"><label>E-mail</label><input name="email" required="" type="email"
+                                value="admin@comparatrip.com" /></div>
+                    </div>
+                    <h3 style="margin-top:16px">Viajante 2 (adulto)</h3>
+                    <div class="form-grid">
+                        <div class="field"><label>Nome completo</label><input name="nome1" required="" value="" /></div>
+                        <div class="field"><label>CPF ou passaporte</label><input name="doc1"
+                                placeholder="000.000.000-00" required="" /></div>
+                        <div class="field"><label>Data de nascimento</label><input name="nasc1" required=""
+                                type="date" /></div>
+                    </div>
+                    <h3 style="margin-top:16px">Viajante 3 (criança)</h3>
+                    <div class="form-grid">
+                        <div class="field"><label>Nome completo</label><input name="nome2" required="" value="" /></div>
+                        <div class="field"><label>CPF ou passaporte</label><input name="doc2"
+                                placeholder="000.000.000-00" required="" /></div>
+                        <div class="field"><label>Data de nascimento</label><input name="nasc2" required=""
+                                type="date" /></div>
+                    </div>
+                    <h3 style="margin-top:18px">Forma de pagamento</h3>
+                    <div class="chips" id="forma"><button class="chip active" data-f="Cartão de crédito"
+                            data-payment="Cartão de crédito" type="button">Cartão de crédito</button><button
+                            class="chip" data-f="PIX" data-payment="PIX" type="button">PIX</button><button class="chip"
+                            data-f="Boleto" data-payment="Boleto" type="button">Boleto</button></div>
+                    <div id="fPay" style="margin-top:12px">
+                        <div class="form-grid" data-payment-panel="Cartão de crédito">
+                            <div class="field"><label>Número do cartão</label><input name="numero_cartao"
+                                    placeholder="0000 0000 0000 0000" required="" /></div>
+                            <div class="field"><label>Nome no cartão</label><input name="nome_cartao" required="" />
+                            </div>
+                            <div class="field"><label>Validade</label><input name="validade_cartao" placeholder="MM/AA"
+                                    required="" /></div>
+                            <div class="field"><label>Parcelas</label><select name="parcelas">
+                                    <option>1x de R$ 4.492,80</option>
+                                    <option>2x de R$ 2.246,40</option>
+                                    <option>3x de R$ 1.497,60</option>
+                                    <option>6x de R$ 748,80</option>
+                                    <option>10x de R$ 449,28</option>
+                                </select></div>
+                        </div>
+                        <div data-payment-panel="PIX" hidden="">
+                            <p class="form-note">O QR Code PIX será exibido na confirmação.</p>
+                        </div>
+                        <div data-payment-panel="Boleto" hidden="">
+                            <p class="form-note">O boleto será gerado após o envio dos dados.</p>
+                        </div>
+                    </div><button class="btn-primario" style="margin-top:16px;width:100%"><i
+                            class="fa-solid fa-lock"></i> Confirmar pagamento</button>
+                    <p class="form-note" style="margin-top:8px">O envio e o pagamento serão processados pela integração
+                        em PHP.</p>
+                </form>
+                <aside class="summary-card">
+                    <h3>Rio de Janeiro Clássico</h3>
+                    <div class="summary-line"><span>Saída</span><strong>15/12/2026</strong></div>
+                    <div class="summary-line"><span>Viajantes</span><strong>3</strong></div>
+                    <div class="summary-line summary-total"><span>Total</span><strong>R$ 4.492,80</strong></div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div><a class="logo" href="index.html" style="color:white"><i
+                        class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+                <p style="margin-top:12px">Compare viagens, descubra destinos e planeje sua próxima aventura.</p>
+            </div>
+            <div>
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Sua conta</h3>
+                <ul>
+                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="cadastro.html">Criar conta</a></li>
+                    <li><a href="minhas-viagens.html">Minhas viagens</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="termos.html">Termos de uso</a></li>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Receba novidades</h3>
+                <form action="" class="newsletter-form" id="newsletterForm" method="post"><input name="email"
+                        placeholder="Seu melhor e-mail" required="" type="email" /><button
+                        type="submit">Assinar</button></form>
+                <p aria-live="polite" id="msgNewsletter" style="margin-top:8px"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Comparatrip. Projeto demonstrativo desenvolvido por Kaic.</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="extra.js"></script>
+</body>
+
+</html>

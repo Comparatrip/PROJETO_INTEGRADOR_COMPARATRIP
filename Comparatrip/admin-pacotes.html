@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Gerenciar pacotes." name="description" />
+    <title>Admin · Pacotes | Comparatrip</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="extra.css" rel="stylesheet" />
+</head>
+
+<body data-page="adminPacotes">
+    <header class="navbar"><a class="logo" href="index.html"><i
+                class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a class="" href="index.html">Home</a></li>
+            <li><a class="" href="pacotes.html">Pacotes</a></li>
+            <li><a class="" href="destinos.html">Destinos</a></li>
+            <li><a class="" href="promocoes.html">Promoções</a></li>
+            <li><a class="" href="blog.html">Blog</a></li>
+            <li><a class="" href="sobre.html">Sobre</a></li>
+            <li><a class="" href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions"><a aria-label="Favoritos" class="icon-link" href="favoritos.html"><i
+                    class="fa-regular fa-heart"></i></a><a aria-label="Carrinho" class="icon-link"
+                href="carrinho.html"><i class="fa-solid fa-cart-shopping"></i></a><a class="btn-conta"
+                href="login.html"><i class="fa-regular fa-user"></i> Entrar</a><button aria-expanded="false"
+                aria-label="Abrir menu" class="menu-btn" id="menuBtn" type="button"><i
+                    class="fa-solid fa-bars"></i></button></div>
+    </header>
+    <main id="app">
+        <section class="page-header" style="padding:36px 4%">
+            <h1>Painel administrativo</h1>
+            <div class="chips" style="justify-content:center;margin-top:12px"><a class="chip"
+                    href="admin.html">Dashboard</a><a class="chip active" href="admin-pacotes.html">Pacotes</a><a
+                    class="chip" href="admin-reservas.html">Reservas</a></div>
+        </section>
+        <section class="section section-alt">
+            <div class="container">
+                <form class="form-box" id="apf" method="post" style="margin-bottom:20px">
+                    <h2 id="apt">Novo pacote</h2><input name="id" type="hidden" />
+                    <div class="form-grid">
+                        <div class="field"><label>Nome</label><input name="nome" required="" type="text" /></div>
+                        <div class="field"><label>Destino</label><input name="destino" required="" type="text" /></div>
+                        <div class="field"><label>Preço (R$)</label><input name="preco" required="" type="number" />
+                        </div>
+                        <div class="field"><label>Preço antigo (0 = sem desconto)</label><input name="antigo"
+                                required="" type="number" /></div>
+                        <div class="field"><label>Dias</label><input name="dias" required="" type="number" /></div>
+                        <div class="field"><label>Vagas</label><input name="vagas" required="" type="number" /></div>
+                        <div class="field"><label>Região</label><select name="regiao">
+                                <option>Nordeste</option>
+                                <option>Sudeste</option>
+                                <option>Sul</option>
+                                <option>Europa</option>
+                                <option>Caribe</option>
+                                <option>América do Sul</option>
+                            </select></div>
+                        <div class="field"><label>Categoria</label><select name="cat">
+                                <option value="praia">Praia</option>
+                                <option value="serra">Serra</option>
+                                <option value="internacional">Internacional</option>
+                                <option value="cruzeiros">Cruzeiros</option>
+                            </select></div>
+                        <div class="field"><label>Transporte</label><select name="transporte">
+                                <option>Aéreo</option>
+                                <option>Ônibus</option>
+                                <option>Navio</option>
+                            </select></div>
+                        <div class="field"><label>Pensão</label><select name="pensao">
+                                <option>Café da manhã</option>
+                                <option>Meia pensão</option>
+                                <option>Pensão completa</option>
+                            </select></div>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:12px"><button class="btn-primario">Salvar
+                            pacote</button><button class="small-btn ghost" id="novo" type="button">Limpar</button></div>
+                </form>
+                <div style="overflow:auto">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Pacote</th>
+                                <th>Região</th>
+                                <th>Preço</th>
+                                <th>Vagas</th>
+                                <th></th>
+                            </tr>
+                            <tr data-name="Rio de Janeiro Clássico" data-price="1890.00" data-region="Sudeste"
+                                data-vacancies="20">
+                                <td>Rio de Janeiro Clássico</td>
+                                <td>Sudeste</td>
+                                <td>R$ 1.890,00</td>
+                                <td>20</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="rio"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="rio"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Salvador e Praia do Forte" data-price="2150.00" data-region="Nordeste"
+                                data-vacancies="15">
+                                <td>Salvador e Praia do Forte</td>
+                                <td>Nordeste</td>
+                                <td>R$ 2.150,00</td>
+                                <td>15</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="salvador"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="salvador"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Fernando de Noronha Paraíso" data-price="5490.00" data-region="Nordeste"
+                                data-vacancies="8">
+                                <td>Fernando de Noronha Paraíso</td>
+                                <td>Nordeste</td>
+                                <td>R$ 5.490,00</td>
+                                <td>8</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="noronha"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="noronha"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Gramado e Canela Inverno" data-price="1690.00" data-region="Sul"
+                                data-vacancies="30">
+                                <td>Gramado e Canela Inverno</td>
+                                <td>Sul</td>
+                                <td>R$ 1.690,00</td>
+                                <td>30</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="gramado"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="gramado"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Campos do Jordão Romântico" data-price="1290.00" data-region="Sudeste"
+                                data-vacancies="25">
+                                <td>Campos do Jordão Romântico</td>
+                                <td>Sudeste</td>
+                                <td>R$ 1.290,00</td>
+                                <td>25</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="campos"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="campos"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Paris Encantadora" data-price="8990.00" data-region="Europa"
+                                data-vacancies="12">
+                                <td>Paris Encantadora</td>
+                                <td>Europa</td>
+                                <td>R$ 8.990,00</td>
+                                <td>12</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="paris"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="paris"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Lisboa e Porto" data-price="7490.00" data-region="Europa"
+                                data-vacancies="14">
+                                <td>Lisboa e Porto</td>
+                                <td>Europa</td>
+                                <td>R$ 7.490,00</td>
+                                <td>14</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="lisboa"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="lisboa"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Cancún All Inclusive" data-price="9890.00" data-region="Caribe"
+                                data-vacancies="10">
+                                <td>Cancún All Inclusive</td>
+                                <td>Caribe</td>
+                                <td>R$ 9.890,00</td>
+                                <td>10</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="cancun"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="cancun"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Bariloche na Neve" data-price="4790.00" data-region="América do Sul"
+                                data-vacancies="18">
+                                <td>Bariloche na Neve</td>
+                                <td>América do Sul</td>
+                                <td>R$ 4.790,00</td>
+                                <td>18</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="bariloche"
+                                        type="button">Editar</button> <button class="small-btn danger"
+                                        data-x="bariloche" type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Cruzeiro pelo Litoral Brasileiro" data-price="3290.00" data-region="Sudeste"
+                                data-vacancies="40">
+                                <td>Cruzeiro pelo Litoral Brasileiro</td>
+                                <td>Sudeste</td>
+                                <td>R$ 3.290,00</td>
+                                <td>40</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="cruzeiro"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="cruzeiro"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Cruzeiro pelo Caribe" data-price="11290.00" data-region="Caribe"
+                                data-vacancies="22">
+                                <td>Cruzeiro pelo Caribe</td>
+                                <td>Caribe</td>
+                                <td>R$ 11.290,00</td>
+                                <td>22</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="caribe"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="caribe"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                            <tr data-name="Santiago e Vinícolas" data-price="3990.00" data-region="América do Sul"
+                                data-vacancies="16">
+                                <td>Santiago e Vinícolas</td>
+                                <td>América do Sul</td>
+                                <td>R$ 3.990,00</td>
+                                <td>16</td>
+                                <td style="white-space:nowrap"><button class="small-btn ghost" data-e="santiago"
+                                        type="button">Editar</button> <button class="small-btn danger" data-x="santiago"
+                                        type="button">Excluir</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div><a class="logo" href="index.html" style="color:white"><i
+                        class="fa-solid fa-plane-departure"></i><span>compara<span>trip</span>.</span></a>
+                <p style="margin-top:12px">Compare viagens, descubra destinos e planeje sua próxima aventura.</p>
+            </div>
+            <div>
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="pacotes.html">Pacotes</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="promocoes.html">Promoções</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Sua conta</h3>
+                <ul>
+                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="cadastro.html">Criar conta</a></li>
+                    <li><a href="minhas-viagens.html">Minhas viagens</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                    <li><a href="termos.html">Termos de uso</a></li>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Receba novidades</h3>
+                <form action="" class="newsletter-form" id="newsletterForm" method="post"><input name="email"
+                        placeholder="Seu melhor e-mail" required="" type="email" /><button
+                        type="submit">Assinar</button></form>
+                <p aria-live="polite" id="msgNewsletter" style="margin-top:8px"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Comparatrip. Projeto demonstrativo desenvolvido por Kaic.</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="extra.js"></script>
+    <script src="api.js"></script>
+</body>
+
+</html>
